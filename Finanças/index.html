@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Finanças</title>
+  <link rel="stylesheet" href="Style/style.css">
+</head>
+<body>
+
+  <!-- TELA: DASHBOARD -->
+  <div class="screen active" id="screen-dashboard">
+    <header class="header">
+      <span class="header-title">Finanças</span>
+    </header>
+    <main class="content">
+
+      <div class="balance-card">
+        <div class="balance-label" id="dash-mes">Saldo — junho</div>
+        <div class="balance-amount" id="dash-saldo">R$ 0,00</div>
+        <div class="balance-row">
+          <div class="balance-item">
+            <div class="balance-item-label">↓ Entradas</div>
+            <div class="balance-item-value" id="dash-entradas">R$ 0,00</div>
+          </div>
+          <div class="balance-item">
+            <div class="balance-item-label">↑ Saídas</div>
+            <div class="balance-item-value" id="dash-saidas">R$ 0,00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-title">Últimos lançamentos</div>
+      <div class="card" style="padding: 4px 16px;" id="dash-lista">
+        <p style="color:#888; font-size:14px; padding:12px 0;">Carregando...</p>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- TELA: LANÇAMENTO -->
+  <div class="screen" id="screen-lancamento">
+    <header class="header">
+      <button class="btn-back" onclick="goTo('dashboard')">←</button>
+      <span class="header-title">Novo lançamento</span>
+      <span style="width:36px;"></span>
+    </header>
+    <main class="content">
+
+      <div class="type-toggle">
+        <button class="type-btn active-saida" id="btn-saida" onclick="setTipo('Saída')">Saída</button>
+        <button class="type-btn" id="btn-entrada" onclick="setTipo('Entrada')">Entrada</button>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Valor</label>
+        <div class="valor-wrap">
+          <span class="valor-prefix">R$</span>
+          <input class="form-input valor-input" id="inp-valor" type="number" inputmode="decimal" placeholder="0,00" step="0.01" min="0">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Data</label>
+        <input class="form-input" id="inp-data" type="date">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Descrição</label>
+        <input class="form-input" id="inp-desc" type="text" placeholder="Ex: Mercado Extra">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Categoria</label>
+        <select class="form-input" id="inp-cat">
+          <option value="">Selecionar</option>
+          <option>Alimentação</option>
+          <option>Transporte</option>
+          <option>Moradia</option>
+          <option>Saúde</option>
+          <option>Lazer</option>
+          <option>Educação</option>
+          <option>Roupas</option>
+          <option>Assinaturas</option>
+          <option>Investimento</option>
+          <option>Salário</option>
+          <option>Outros</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Quem pagou?</label>
+        <div class="pessoa-row">
+          <button class="pessoa-btn active" id="btn-bru" onclick="setPessoa('Bruna')">Bru</button>
+          <button class="pessoa-btn" id="btn-lucas" onclick="setPessoa('Lucas')">Lucas</button>
+          <button class="pessoa-btn" id="btn-ambos" onclick="setPessoa('Ambos')">Ambos</button>
+        </div>
+      </div>
+
+      <button class="save-btn" onclick="salvar()">Salvar lançamento</button>
+
+    </main>
+  </div>
+
+  <!-- NAVEGAÇÃO -->
+  <nav class="bottom-nav">
+    <button class="nav-item active" id="nav-dashboard" onclick="goTo('dashboard')">
+      <span class="nav-icon">🏠</span>
+      <span>Início</span>
+    </button>
+    <button class="nav-item" id="nav-lancamento" onclick="goTo('lancamento')">
+      <span class="nav-icon">＋</span>
+      <span>Lançar</span>
+    </button>
+    <button class="nav-item" id="nav-historico" onclick="goTo('historico')">
+      <span class="nav-icon">☰</span>
+      <span>Histórico</span>
+    </button>
+  </nav>
+  <!-- TELA: HISTÓRICO -->
+   <div class="screen" id="screen-historico">
+    <header class="header">
+        <span class="header-title">Histórico</span>
+    </header>
+        <main class="content">
+
+            <div class="filter-row">
+            <button class="filter-chip active" id="filtro-todos" onclick="setFiltro('todos', this)">Todos</button>
+            <button class="filter-chip" onclick="setFiltro('Saída', this)">Saídas</button>
+            <button class="filter-chip" onclick="setFiltro('Entrada', this)">Entradas</button>
+            <button class="filter-chip" onclick="setFiltro('Bruna', this)">Bruna</button>
+            <button class="filter-chip" onclick="setFiltro('Lucas', this)">Lucas</button>
+            </div>
+
+            <div id="hist-lista">
+            <p style="color:#888; font-size:14px; padding:12px 0;">Carregando...</p>
+            </div>
+
+        </main>
+   </div>
+
+  <script type="module" src="Script/app.js"></script>
+</body>
+</html>
