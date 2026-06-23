@@ -205,6 +205,8 @@ async function salvar() {
   window.location.href = 'sucesso.html'
   }
 
+
+
 // Chama ao iniciar
 const mesAtual = new Date().toLocaleString('pt-BR', {month: 'long', year: 'numeric'})
 document.getElementById('dash-mes').textContent = 'Saldo — ' + mesAtual

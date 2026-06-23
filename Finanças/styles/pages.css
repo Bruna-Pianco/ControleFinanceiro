@@ -1,0 +1,68 @@
+.sucesso-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 32px 24px;
+  gap: 10px;
+}
+
+.sucesso-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--green-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.sucesso-title {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.sucesso-sub {
+  font-size: 14px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.sucesso-valor {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 8px 0 4px;
+}
+
+.sucesso-tags {
+  display: flex;
+  gap: 8px;
+}
+
+.tag {
+  font-size: 12px;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-weight: 500;
+  background: var(--red-bg);
+  color: var(--red);
+}
+
+.tag.entrada {
+  background: var(--green-bg);
+  color: var(--green);
+}
+
+.tag-cat {
+  background: var(--purple-bg);
+  color: var(--purple);
+}
+
+.sucesso-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border);
+  margin: 12px 0;
+}

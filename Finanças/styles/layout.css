@@ -1,0 +1,94 @@
+/* TELAS */
+.screen {
+  display: none;
+  min-height: 100vh;
+  flex-direction: column;
+  padding-bottom: 80px;
+}
+
+.screen.active {
+  display: flex;
+}
+
+/* HEADER */
+.header {
+  background: var(--dark);
+  padding: 52px 20px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-title {
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  flex: 1;
+  text-align: center;
+}
+
+.btn-back {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+/* CONTEÚDO */
+.content {
+  flex: 1;
+  padding: 20px 16px;
+}
+
+/* NAVEGAÇÃO INFERIOR */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 430px;
+  background: var(--card);
+  border-top: 1px solid var(--border);
+  display: flex;
+  padding: 8px 0 24px;
+  z-index: 100;
+}
+
+.nav-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 6px 0;
+  border: none;
+  background: none;
+}
+
+.nav-item.active {
+  color: var(--dark);
+  font-weight: 600;
+}
+
+.nav-icon {
+  font-size: 20px;
+}
+
+/* SEÇÕES */
+.section-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin-bottom: 10px;
+}

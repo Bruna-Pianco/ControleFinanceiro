@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <title>Finanças</title>
-  <link rel="stylesheet" href="Style/style.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/components.css">
 </head>
 <body>
 
@@ -16,7 +18,7 @@
     <main class="content">
 
       <div class="balance-card">
-        <div class="balance-label" id="dash-mes">Saldo — junho</div>
+        <div class="balance-label" id="dash-mes">Saldo</div>
         <div class="balance-amount" id="dash-saldo">R$ 0,00</div>
         <div class="balance-row">
           <div class="balance-item">
@@ -32,13 +34,13 @@
 
       <div class="section-title">Últimos lançamentos</div>
       <div class="card" style="padding: 4px 16px;" id="dash-lista">
-        <p style="color:#888; font-size:14px; padding:12px 0;">Carregando...</p>
+        <p class="msg-vazio">Carregando...</p>
       </div>
 
     </main>
   </div>
 
-  <!-- TELA: LANÇAMENTO -->
+  <!-- TELA: LANÇAMENTO (criação e edição) -->
   <div class="screen" id="screen-lancamento">
     <header class="header">
       <button class="btn-back" onclick="goTo('dashboard')">←</button>
@@ -102,6 +104,28 @@
     </main>
   </div>
 
+  <!-- TELA: HISTÓRICO -->
+  <div class="screen" id="screen-historico">
+    <header class="header">
+      <span class="header-title">Histórico</span>
+    </header>
+    <main class="content">
+
+      <div class="filter-row">
+        <button class="filter-chip active" onclick="setFiltro('todos', this)">Todos</button>
+        <button class="filter-chip" onclick="setFiltro('Saída', this)">Saídas</button>
+        <button class="filter-chip" onclick="setFiltro('Entrada', this)">Entradas</button>
+        <button class="filter-chip" onclick="setFiltro('Bruna', this)">Bru</button>
+        <button class="filter-chip" onclick="setFiltro('Lucas', this)">Lucas</button>
+      </div>
+
+      <div id="hist-lista">
+        <p class="msg-vazio">Carregando...</p>
+      </div>
+
+    </main>
+  </div>
+
   <!-- NAVEGAÇÃO -->
   <nav class="bottom-nav">
     <button class="nav-item active" id="nav-dashboard" onclick="goTo('dashboard')">
@@ -117,28 +141,7 @@
       <span>Histórico</span>
     </button>
   </nav>
-  <!-- TELA: HISTÓRICO -->
-   <div class="screen" id="screen-historico">
-    <header class="header">
-        <span class="header-title">Histórico</span>
-    </header>
-        <main class="content">
 
-            <div class="filter-row">
-            <button class="filter-chip active" id="filtro-todos" onclick="setFiltro('todos', this)">Todos</button>
-            <button class="filter-chip" onclick="setFiltro('Saída', this)">Saídas</button>
-            <button class="filter-chip" onclick="setFiltro('Entrada', this)">Entradas</button>
-            <button class="filter-chip" onclick="setFiltro('Bruna', this)">Bruna</button>
-            <button class="filter-chip" onclick="setFiltro('Lucas', this)">Lucas</button>
-            </div>
-
-            <div id="hist-lista">
-            <p style="color:#888; font-size:14px; padding:12px 0;">Carregando...</p>
-            </div>
-
-        </main>
-   </div>
-
-  <script type="module" src="Script/app.js"></script>
+  <script type="module" src="scripts/app.js"></script>
 </body>
 </html>
